@@ -1,0 +1,1 @@
+INSERT INTO airport(id, name_airport, code_iata_airport, code_icao_irport, latitude_airport, longitude_airport, geoname_id, timezone, gmt, phone, name_country, code_iso2_country, code_iata_city) VALUES (1, 'Aachen/Merzbruck', 'AAH', 'EDKA', 50.75, 6.133333, 3247449, 'Europe/Berlin', '1', '+31685558544', 'Germany', 'DE', 'AAH')
