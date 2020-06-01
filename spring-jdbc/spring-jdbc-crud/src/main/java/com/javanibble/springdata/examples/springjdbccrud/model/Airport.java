@@ -1,4 +1,4 @@
-package com.javanibble.springdata.examples.springdatajdbccrud.model;
+package com.javanibble.springdata.examples.springjdbccrud.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

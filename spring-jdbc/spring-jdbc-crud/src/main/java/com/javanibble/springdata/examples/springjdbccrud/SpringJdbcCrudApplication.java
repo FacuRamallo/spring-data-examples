@@ -1,7 +1,7 @@
-package com.javanibble.springdata.examples.springdatajdbccrud;
+package com.javanibble.springdata.examples.springjdbccrud;
 
-import com.javanibble.springdata.examples.springdatajdbccrud.model.Airport;
-import com.javanibble.springdata.examples.springdatajdbccrud.repository.AirportDAO;
+import com.javanibble.springdata.examples.springjdbccrud.model.Airport;
+import com.javanibble.springdata.examples.springjdbccrud.repository.AirportDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringDataJdbcCrudApplication implements CommandLineRunner {
+public class SpringJdbcCrudApplication implements CommandLineRunner {
 
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -21,7 +21,7 @@ public class SpringDataJdbcCrudApplication implements CommandLineRunner {
 
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringDataJdbcCrudApplication.class, args);
+		SpringApplication.run(SpringJdbcCrudApplication.class, args);
 	}
 
 
