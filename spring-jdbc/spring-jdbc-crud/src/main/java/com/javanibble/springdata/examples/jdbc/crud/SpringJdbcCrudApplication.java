@@ -1,7 +1,7 @@
-package com.javanibble.springdata.examples.springjdbccrud;
+package com.javanibble.springdata.examples.jdbc.crud;
 
-import com.javanibble.springdata.examples.springjdbccrud.model.Airport;
-import com.javanibble.springdata.examples.springjdbccrud.repository.AirportDAO;
+import com.javanibble.springdata.examples.jdbc.crud.model.Airport;
+import com.javanibble.springdata.examples.jdbc.crud.repository.AirportDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

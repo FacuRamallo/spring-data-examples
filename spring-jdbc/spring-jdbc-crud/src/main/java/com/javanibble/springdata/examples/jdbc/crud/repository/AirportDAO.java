@@ -1,6 +1,6 @@
-package com.javanibble.springdata.examples.springjdbccrud.repository;
+package com.javanibble.springdata.examples.jdbc.crud.repository;
 
-import com.javanibble.springdata.examples.springjdbccrud.model.Airport;
+import com.javanibble.springdata.examples.jdbc.crud.model.Airport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
