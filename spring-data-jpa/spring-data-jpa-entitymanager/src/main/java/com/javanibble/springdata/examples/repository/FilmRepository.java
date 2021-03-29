@@ -1,7 +1,7 @@
-package com.javanibble.springdata.examples.jpa.crud.repository;
+package com.javanibble.springdata.examples.repository;
 
 
-import com.javanibble.springdata.examples.jpa.crud.model.Film;
+import com.javanibble.springdata.examples.model.Film;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

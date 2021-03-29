@@ -1,4 +1,4 @@
-package com.javanibble.springdata.examples.jpa.crud.model;
+package com.javanibble.springdata.examples.model;
 
 
 import lombok.AllArgsConstructor;

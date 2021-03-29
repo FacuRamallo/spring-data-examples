@@ -1,9 +1,9 @@
-package com.javanibble.springdata.examples.jpa.crud;
+package com.javanibble.springdata.examples;
 
 
-import com.javanibble.springdata.examples.jpa.crud.model.Film;
-import com.javanibble.springdata.examples.jpa.crud.model.Rating;
-import com.javanibble.springdata.examples.jpa.crud.repository.FilmRepository;
+import com.javanibble.springdata.examples.model.Film;
+import com.javanibble.springdata.examples.model.Rating;
+import com.javanibble.springdata.examples.repository.FilmRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
