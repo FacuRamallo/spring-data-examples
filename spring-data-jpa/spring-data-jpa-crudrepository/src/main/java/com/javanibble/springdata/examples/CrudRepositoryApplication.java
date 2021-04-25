@@ -4,6 +4,8 @@ package com.javanibble.springdata.examples;
 import com.javanibble.springdata.examples.model.Film;
 import com.javanibble.springdata.examples.model.Rating;
 import com.javanibble.springdata.examples.repository.FilmRepository;
+import com.javanibble.springdata.examples.service.FilmService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,18 +14,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.sql.Timestamp;
+import java.util.Optional;
 
-
+@Slf4j
 @SpringBootApplication
 public class CrudRepositoryApplication implements CommandLineRunner {
 
-
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
-
-
 	@Autowired
-	private FilmRepository filmRepository;
-
+	private FilmService filmService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(CrudRepositoryApplication.class, args);
@@ -33,20 +31,40 @@ public class CrudRepositoryApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		logger.info("\n 1. Retrieve All Films -> {}", filmRepository.findAll());
-		logger.info("\n 2. Retrieve Film with ID: 1 -> {}", filmRepository.findById(1));
+		Film myFirstFilm = new Film(11,"MY FIRST FILM","...",2010,3,0.99,96,21.99, Rating.PG, "Deleted Scenes,Behind the Scenes",new Timestamp(System.currentTimeMillis()));
+		Film mySecondFilm = new Film(12,"MY SECOND FILM","...",2012,2,0.99,106,26.99, Rating.PG, "Deleted Scenes,Behind the Scenes",new Timestamp(System.currentTimeMillis()));
 
-		logger.info("\n 3. Delete Film with ID: 1 ");
-		filmRepository.deleteById(1);
 
-		logger.info("\n 4. Retrieve All Film -> {}", filmRepository.findAll());
+		log.info("\n 1. Number of Films -> {} ", filmService.filmCount());
 
-		logger.info("\n 5. Insert Film -> {}", filmRepository.save(new Film(1,"MY DINOSAUR","...",2006,6,0.99,86,20.99, Rating.PG, "Deleted Scenes,Behind the Scenes",new Timestamp(System.currentTimeMillis()))));
+		log.info("\n 2. Save Film -> {} ", filmService.saveFilm(myFirstFilm));
+		log.info("\n 3. Delete Film By Id");
+		filmService.deleteFilmById(Integer.valueOf(11));
 
-		logger.info("\n 6. Retrieve Film with ID: 1 -> {}", filmRepository.findById(1));
+		log.info("\n 4. Delete all films");
+		filmService.deleteAllFilms();
 
-		logger.info("\n 7. Update Film with ID 1 -> {}", filmRepository.save(new Film(1,"ACADEMY DINOSAUR","A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies",2006,6,0.99,86,20.99, Rating.PG, "Deleted Scenes,Behind the Scenes",new Timestamp(System.currentTimeMillis()))));
-		logger.info("\n 8. Retrieve Film with ID: 1 -> {}", filmRepository.findById(1));
+		log.info("\n 5. Number of Films -> {} ", filmService.filmCount());
+
+
+
+
+
+
+//		public void deleteFilm(Film film) {
+//		public void deleteListOfFilms(Iterable<Film> filmList) {
+//		public void deleteAllFilmsById(Iterable<Integer> ids) {
+//		public void deleteFilmById(Integer id){
+//		public void filmExistById(Integer id) {
+//
+//		public Iterable<Film> findAllFilms() {
+//		public Iterable<Film> findAllFilmsById(Iterable<Integer> ids) {
+//		public Optional<Film> findFilmById(Integer id) {
+//		public Film (Film film) {
+//		public Iterable<Film> saveListOfFilms(Iterable<Film> listOfFilms) {
+
+
+
 
 	}
 
