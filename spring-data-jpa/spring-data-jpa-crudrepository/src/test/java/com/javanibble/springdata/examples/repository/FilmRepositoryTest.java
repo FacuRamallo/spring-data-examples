@@ -146,6 +146,8 @@ public class FilmRepositoryTest {
 
     @Test
     public void testPersistListOfFilms() {
+        List<String> listOfFilmTitles = Arrays.asList("MY FIRST FILM", "MY Second FILM");
+
         Film myFirstFilm = Film.builder().id(11).title("MY FIRST FILM").description("...")
                 .releaseYear(2010).rentalDuration(3).rentalRate(0.99).length(96).replacement_cost(21.99)
                 .rating(Rating.PG).specialFeatures("Deleted Scenes,Behind the Scenes")
@@ -160,12 +162,11 @@ public class FilmRepositoryTest {
         listOfFilms.add(myFirstFilm);
         listOfFilms.add(mySecondFilm);
 
-        repository.saveAll(listOfFilms);
+        Iterable<Film> persistedFilms = repository.saveAll(listOfFilms);
 
-        long numberOfExpectedRecords = 12;
-        long numberOfRecords = repository.count();
-
-        assertThat(numberOfExpectedRecords).isEqualTo(numberOfRecords);
+        for(Film film: persistedFilms) {
+            assertThat(listOfFilmTitles).contains(film.getTitle());
+        }
     }
 
 }
