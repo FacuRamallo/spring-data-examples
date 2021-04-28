@@ -2,6 +2,7 @@ package com.javanibble.springdata.examples.model;
 
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
@@ -15,6 +16,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Entity
 @DynamicUpdate
+@Builder
 public class Film {
 
     @Id

@@ -1,71 +1,61 @@
 package com.javanibble.springdata.examples;
 
-
-import com.javanibble.springdata.examples.model.Film;
-import com.javanibble.springdata.examples.model.Rating;
-import com.javanibble.springdata.examples.repository.FilmRepository;
-import com.javanibble.springdata.examples.service.FilmService;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.sql.Timestamp;
-import java.util.Optional;
 
 @Slf4j
 @SpringBootApplication
-public class CrudRepositoryApplication implements CommandLineRunner {
-
-	@Autowired
-	private FilmService filmService;
+public class CrudRepositoryApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CrudRepositoryApplication.class, args);
 	}
 
 
-	@Override
-	public void run(String... args) throws Exception {
-
-		Film myFirstFilm = new Film(11,"MY FIRST FILM","...",2010,3,0.99,96,21.99, Rating.PG, "Deleted Scenes,Behind the Scenes",new Timestamp(System.currentTimeMillis()));
-		Film mySecondFilm = new Film(12,"MY SECOND FILM","...",2012,2,0.99,106,26.99, Rating.PG, "Deleted Scenes,Behind the Scenes",new Timestamp(System.currentTimeMillis()));
-
-
-		log.info("\n 1. Number of Films -> {} ", filmService.filmCount());
-
-		log.info("\n 2. Save Film -> {} ", filmService.saveFilm(myFirstFilm));
-		log.info("\n 3. Delete Film By Id");
-		filmService.deleteFilmById(Integer.valueOf(11));
-
-		log.info("\n 4. Delete all films");
-		filmService.deleteAllFilms();
-
-		log.info("\n 5. Number of Films -> {} ", filmService.filmCount());
 
 
 
-
-
-
-//		public void deleteFilm(Film film) {
-//		public void deleteListOfFilms(Iterable<Film> filmList) {
-//		public void deleteAllFilmsById(Iterable<Integer> ids) {
-//		public void deleteFilmById(Integer id){
-//		public void filmExistById(Integer id) {
 //
-//		public Iterable<Film> findAllFilms() {
-//		public Iterable<Film> findAllFilmsById(Iterable<Integer> ids) {
-//		public Optional<Film> findFilmById(Integer id) {
-//		public Film (Film film) {
-//		public Iterable<Film> saveListOfFilms(Iterable<Film> listOfFilms) {
+//		log.info("*********************************************************");
+//		log.info("\n Scenario 4: Persist a list of Film entities.");
+//		List<Film> myFilms = new ArrayList<Film>();
+//		myFilms.add(myFirstFilm);
+//		myFilms.add(mySecondFilm);
+//		filmService.saveListOfFilms(myFilms);
+//		Iterable<Film> listOfFilms= filmService.findAllFilms();
+//		listOfFilms.forEach(e -> log.info(e.toString()));
+//
+//		log.info("\n Scenario 5: Delete a specific Film entity.");
+//		filmService.deleteFilm(myFirstFilm);
+//		filmService.deleteFilm(mySecondFilm);
+//
+//		log.info("\n Scenario 6: Delete a list of Film entities.");
+//		filmService.saveListOfFilms(myFilms);
+//		filmService.deleteListOfFilms(myFilms);
+//
+//		log.info("\n Scenario 7: Delete a list of Film Ids.");
+//		List<Integer> myFilmIds = new ArrayList<Integer>();
+//		myFilmIds.add(Integer.valueOf(9));
+//		myFilmIds.add(Integer.valueOf(10));
+//		filmService.deleteAllFilmsById(myFilmIds);
+//
+//		log.info("\n Scenario 8: Determine if Film exist by Id.");
+//		boolean filmExist = filmService.filmExistById(Integer.valueOf(8));
+//
+//		log.info("\n Scenario 9: Delete a list of Film Ids.");
+//		List<Integer> anotherFilmIds = new ArrayList<Integer>();
+//		anotherFilmIds.add(Integer.valueOf(9));
+//		anotherFilmIds.add(Integer.valueOf(10));
+//		Iterable<Film> anotherSet = filmService.findAllFilmsById(anotherFilmIds);
+//
+//		log.info("\n Scenario 10: Delete a list of Film Ids.");
+//		Optional<Film> myFilm = filmService.findFilmById(Integer.valueOf(9));
+//
+//		log.info("\n Scenario 11: Delete all films");
+//		filmService.deleteAllFilms();
 
-
-
-
-	}
 
 }
