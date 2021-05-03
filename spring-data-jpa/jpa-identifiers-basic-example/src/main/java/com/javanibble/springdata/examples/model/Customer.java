@@ -17,12 +17,8 @@ import javax.persistence.*;
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE,
-            generator = "table-generator")
-    @TableGenerator(name = "table-generator",
-            table = "id_gen",
-            pkColumnName = "gen_name",
-            valueColumnName = "gen_value")
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "table-generator")
+    @TableGenerator(name = "table-generator", table = "id_gen", pkColumnName = "gen_name", valueColumnName = "gen_value")
     private Long id;
 
     @Column(name="first_name")
