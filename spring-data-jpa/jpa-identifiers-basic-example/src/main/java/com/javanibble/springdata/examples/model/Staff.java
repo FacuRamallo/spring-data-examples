@@ -16,8 +16,8 @@ import javax.persistence.*;
 public class Staff {
 
     @Id
-    @GenericGenerator(name="staff_id", strategy="com.javanibble.springdata.examples.identifier.generator.StaffIdentifierGenerator")
     @GeneratedValue(generator="staff_id")
+    @GenericGenerator(name="staff_id", strategy="com.javanibble.springdata.examples.identifier.generator.StaffIdentifierGenerator")
     private Long id;
 
     @Column(name="first_name")
